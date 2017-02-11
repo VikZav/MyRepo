@@ -1,53 +1,49 @@
+import java.time.Year;
+
 
 public class Person {
 	private String name;
 	private int birthYear;
 
 	
-// properties to get and set names of a student and a births of year:
+// properties to get and set names of a student and year of birth:
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 		}
-	public int getbirthYear(){
+	public int getBirthYear(){
 		return birthYear;
 	}
-	public void setbirthYear (int birthYear){
+	public void setBirthYear (int birthYear){
 	this.birthYear=birthYear;
 	}
-//default constructor:
-	public Person () {
-		}
-// constructor with 2 param:
+// constructors:
+	public Person () {}
 	public Person (String name,int birthYear) {
 		this.name=name;
 		this.birthYear=birthYear;
 	
 	}
-//return age of a person:
+//calculate age of a person:
 	public int age () {
-		return 2017-birthYear;
+	return Year.now().getValue()-getBirthYear();
 	}
 //input info about student:
 	public void input(String name,int birthYear) {
 		setName (name);
-		setbirthYear (birthYear);
-	}
-	
-	
-
-	
-// output info about student:
-	public void output () {
-		System.out.println("Person's name:"+getName()+"\n"+"Person's year of birth:"+getbirthYear()+"\n"+"Person's age:"+age() );
+		setBirthYear (birthYear);
 	}
 		
-	
-//hsnage name of a person:
+// output info about student:
+	public String output () {
+		return "Person's name: "+getName()+"\n"+"Person's year of birth:"+getBirthYear()+"\n"+"Person's age: "+age() ;
+	}
+			
+//Change name of a person:
 	public void changeName(String name) {
-		this.name=name;
+		setName(name);
 		
 	}
 	public static void main(String[] args) {
@@ -66,6 +62,7 @@ public class Person {
 		Person person5 = new Person();
 		person5.input("Liza", 1991);
 	
+		
 		
 	}
 	
