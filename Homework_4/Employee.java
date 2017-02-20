@@ -66,12 +66,6 @@ public class Employee {
  	return "Employee name="+name+", Deppartment="+depName+", Salary="+salary;
 	 }		
 	 
-// Arrange workers by salary in ascending order: 	 
-	
-	 
-	 
-	 
-	 
 	 
 // main method:
 	public static void main (String[] args) {
